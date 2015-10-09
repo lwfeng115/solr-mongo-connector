@@ -9,7 +9,10 @@ run pip install mongo-connector
 
 add	./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 add	./solr.conf /etc/supervisor/conf.d/solr.conf
-add ./mongo-connector.conf /etc/supervisor/conf.d/mongo-connector.conf
+add ./init-solr.conf /etc/supervisor/conf.d/init-solr.conf
+add ./init-solr.sh /opt/solr/bin/init-solr.sh
 add ./mongo-connector.sh /opt/solr/bin/mongo-connector.sh
+
+run chmod a+x /opt/solr/bin/mongo-connector.sh
 
 CMD "/usr/bin/supervisord"
